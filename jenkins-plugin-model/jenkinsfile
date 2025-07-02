@@ -14,7 +14,7 @@ pipeline {
 
                     // Use them in shell commands
                     sh 'sudo docker --version'
-                    sh 'dotnet --info'
+                    
                 }
             }
         }
