@@ -4,29 +4,29 @@ Install Jenkins Agent on the Slave Node
 
 Running on the master node:
 
-sudo -iu jenkins
-ssh root@<slave_ip> mkdir -p .ssh
-cat .ssh/id_rsa.pub | ssh root@<slave_ip> 'cat >> .ssh/authorized_keys'
+  sudo -iu jenkins
+  ssh root@<slave_ip> mkdir -p .ssh
+  cat .ssh/id_rsa.pub | ssh root@<slave_ip> 'cat >> .ssh/authorized_keys'
 
 
 Running on slave node:
 
-mkdir bin
-cd bin
-wget http://<master_ip>:8080/jnlpJars/slave.jar
+  mkdir bin
+  cd bin
+  wget http://<master_ip>:8080/jnlpJars/slave.jar
 
 
 Verify and Install Java:
 
-java -version
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt install openjdk-8-jdk
+  java -version
+  sudo add-apt-repository ppa:webupd8team/java
+  sudo apt-get update
+  sudo apt install openjdk-8-jdk
 
 
 Start Slave Agent Command:
 
-ssh root@<slave_ip> java -jar /root/bin/slave.jar
+  ssh root@<slave_ip> java -jar /root/bin/slave.jar
 
 
 
